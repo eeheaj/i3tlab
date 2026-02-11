@@ -33,7 +33,7 @@ subscriber.subscribe('gaze.')  # receive all gaze messages
 data = []
 
 while True:
-    topic, payload = sub.recv_multipart()
+    topic, payload = subscriber.recv_multipart()
     gaze = msgpack.loads(payload, raw=False)
 
     # Example fields
