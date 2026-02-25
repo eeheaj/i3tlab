@@ -103,5 +103,6 @@ while True:
         print(recent_world["timestamp"])
         print(recent_gaze["timestamp"])
         print()
+
         
         # print(f"world+gaze | px={px}, py={py}, conf={conf:.2f}, latest={topic}")

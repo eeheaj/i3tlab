@@ -21,15 +21,12 @@ pub_port = pupil_remote.recv_string()
 # Assumes `sub_port` to be set to the current subscription port
 subscriber = ctx.socket(zmq.SUB)
 subscriber.connect(f'tcp://{ip}:{sub_port}')
+
+# this part is where you select that it is the gaze data
 subscriber.subscribe('gaze.')  # receive all gaze messages
 
 
-# while True:
-#     topic, payload = subscriber.recv_multipart()
-#     message = msgpack.loads(payload)
-#     print(f"{topic}: {message}")
 
-#store data in an array [time stamp, x, y, conf]
 data = []
 
 while True:
